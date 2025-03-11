@@ -1,0 +1,52 @@
+<!-- Layout for a soil entry item -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="?attr/selectableItemBackgroundBorderless"
+    android:clickable="true"
+    android:focusable="true">
+
+    <TextView
+        android:id="@+id/textDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Date"
+        android:textSize="14sp"
+        android:textColor="?attr/colorOnSurface"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textPh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="pH: 6.5"
+        android:textSize="14sp"
+        android:layout_marginTop="4dp" />
+
+    <TextView
+        android:id="@+id/textMoisture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Moisture: 45%"
+        android:textSize="14sp"
+        android:layout_marginTop="4dp" />
+
+    <TextView
+        android:id="@+id/textNutrients"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nutrients: N:10, P:5, K:8"
+        android:textSize="14sp"
+        android:layout_marginTop="4dp" />
+
+    <TextView
+        android:id="@+id/textNotes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Notes: Sample notes"
+        android:textSize="14sp"
+        android:layout_marginTop="8dp"
+        android:textColor="?attr/colorOnSurfaceVariant" />
+</LinearLayout>
