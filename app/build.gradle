@@ -1,9 +1,79 @@
-// Add these dependencies to the existing ones
-dependencies {
-    // Hilt
-    implementation "com.google.dagger:hilt-android:2.50"
-    kapt "com.google.dagger:hilt-compiler:2.50"
+// Android plugin for building the app
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt' // For Kotlin annotation processing
+    id 'dagger.hilt.android.plugin' // For Hilt dependency injection
+}
 
-    // Hilt Navigation (optional)
-    implementation "androidx.hilt:hilt-navigation-compose:1.2.0"
+// Android configuration
+android {
+    compileSdk 34 // Target SDK version
+
+    defaultConfig {
+        applicationId "com.lionico" // Package name
+        minSdk 21 // Minimum SDK version
+        targetSdk 34 // Target SDK version
+        versionCode 1 // App version code
+        versionName "1.0" // App version name
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false // Disable code shrinking for release
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17 // Java compatibility
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = '17' // Kotlin JVM target
+    }
+
+    // Enable view binding
+    viewBinding {
+        enabled = true
+    }
+}
+
+// Dependencies for the app
+dependencies {
+    // Core dependencies
+    implementation "androidx.core:core-ktx:1.12.0" // Kotlin extensions for Android
+    implementation "androidx.appcompat:appcompat:1.6.1" // AppCompat library
+    implementation "com.google.android.material:material:1.11.0" // Material Design components
+    implementation "androidx.constraintlayout:constraintlayout:2.1.4" // ConstraintLayout
+
+    // Room database
+    implementation "androidx.room:room-runtime:2.6.1" // Room runtime
+    kapt "androidx.room:room-compiler:2.6.1" // Room annotation processor
+    implementation "androidx.room:room-ktx:2.6.1" // Room Kotlin extensions
+
+    // Hilt dependency injection
+    implementation "com.google.dagger:hilt-android:2.50" // Hilt core
+    kapt "com.google.dagger:hilt-compiler:2.50" // Hilt annotation processor
+
+    // Lifecycle components
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2" // ViewModel
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.6.2" // LiveData
+
+    // Navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:2.7.6" // Navigation Fragment
+    implementation "androidx.navigation:navigation-ui-ktx:2.7.6" // Navigation UI
+
+    // Coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3" // Coroutines core
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3" // Coroutines Android
+
+    // Material Icons (for FAB icons)
+    implementation "androidx.compose.material:material-icons-extended:1.6.6" // Material Icons
+
+    // Testing dependencies
+    testImplementation "junit:junit:4.13.2" // JUnit for unit testing
+    androidTestImplementation "androidx.test.ext:junit:1.1.5" // Android JUnit
+    androidTestImplementation "androidx.test.espresso:espresso-core:3.5.1" // Espresso fo r UI testing
 }
