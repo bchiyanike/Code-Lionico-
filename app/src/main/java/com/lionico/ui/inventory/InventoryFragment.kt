@@ -64,22 +64,35 @@ class InventoryFragment : Fragment() {
      * Shows a dialog for adding or editing an inventory item.
      * @param item The item to edit, or null to add a new item.
      */
-    private fun showEditDialog(item: InventoryItem?) {
-        MaterialAlertDialogBuilder(requireContext()).apply {
-            setTitle(if (item == null) "Add Item" else "Edit Item")
-            setView(R.layout.dialog_inventory_input)
-            setPositiveButton("Save") { _, _ ->
-                val name = binding.dialogItemName.text.toString()
-                val quantity = binding.dialogItemQuantity.text.toString().toIntOrNull() ?: 0
-                if (item == null) {
-                    viewModel.insertItem(InventoryItem(itemName = name, quantity = quantity))
-                } else {
-                    viewModel.updateItem(item.copy(itemName = name, quantity = quantity))
-                }
-            }
-            setNegativeButton("Cancel", null)
-        }.show()
+    /**
+ * Shows a dialog for adding or editing an inventory item.
+ * @param item The item to edit, or null to add a new item.
+ */
+private fun showEditDialog(item: InventoryItem?) {
+    val dialogBinding = DialogInventoryInputBinding.inflate(layoutInflater)
+
+    // Pre-fill fields if editing an item
+    item?.let {
+        dialogBinding.dialogItemName.setText(it.itemName)
+        dialogBinding.dialogItemQuantity.setText(it.quantity.toString())
     }
+
+    MaterialAlertDialogBuilder(requireContext()).apply {
+        setTitle(if (item == null) "Add Item" else "Edit Item")
+        setView(dialogBinding.root)
+        setPositiveButton("Save") { _, _ ->
+            val name = dialogBinding.dialogItemName.text.toString()
+            val quantity = dialogBinding.dialogItemQuantity.text.toString().toIntOrNull() ?: 0
+
+            if (item == null) {
+                viewModel.insertItem(InventoryItem(itemName = name, quantity = quantity))
+            } else {
+                viewModel.updateItem(item.copy(itemName = name, quantity = quantity))
+            }
+        }
+        setNegativeButton("Cancel", null)
+    }.show()
+}
 
     override fun onDestroyView() {
         super.onDestroyView()
