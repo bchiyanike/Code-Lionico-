@@ -2,12 +2,77 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main_nav_graph"
-    app:startDestination="@id/inventoryFragment">
+<<<<<
 
-    <fragment
+
+
+
+
+
+
+
+
+
+
         android:id="@+id/inventoryFragment"
         android:name="com.lionico.ui.inventory.InventoryFragment"
         android:label="Inventory" />
+=======
+    app:startDestination="@id/dashboardFragment">
 
-    <!-- Add other fragments here as needed -->
-</navigation>
+    <!-- Dashboard Fragment -->
+    <fragment
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+45        android:id="@+id/dashboardFragment"
+45        android:name="com.lionico.ui.dashboard.DashboardFragment"
+
+
+
+
+56
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        android:id="
+
+
+
+
+
+
+
+
+
+
+
+
