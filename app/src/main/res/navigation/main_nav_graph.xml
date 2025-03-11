@@ -1,0 +1,13 @@
+<!-- Navigation graph for the app -->
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/inventoryFragment">
+
+    <fragment
+        android:id="@+id/inventoryFragment"
+        android:name="com.lionico.ui.inventory.InventoryFragment"
+        android:label="Inventory" />
+
+    <!-- Add other fragments here as needed -->
+</navigation>
