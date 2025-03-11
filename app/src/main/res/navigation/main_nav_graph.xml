@@ -2,77 +2,19 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main_nav_graph"
-<<<<<
-
-
-
-
-
-
-
-
-
-
-
-        android:id="@+id/inventoryFragment"
-        android:name="com.lionico.ui.inventory.InventoryFragment"
-        android:label="Inventory" />
-=======
     app:startDestination="@id/dashboardFragment">
 
     <!-- Dashboard Fragment -->
     <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.lionico.ui.dashboard.DashboardFragment"
+        android:label="Dashboard" />
 
+    <!-- Soil Health Fragment -->
+    <fragment
+        android:id="@+id/soilFragment"
+        android:name="com.lionico.ui.soil.SoilFragment"
+        android:label="Soil Health" />
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-45        android:id="@+id/dashboardFragment"
-45        android:name="com.lionico.ui.dashboard.DashboardFragment"
-
-
-
-
-56
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        android:id="
-
-
-
-
-
-
-
-
-
-
-
-
+    <!-- Add other fragments here as needed -->
+</navigation>
