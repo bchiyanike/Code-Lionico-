@@ -1,1 +1,1 @@
-# Code-Lionico-
+Kuzama zama. Zviri kunetsa
