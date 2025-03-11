@@ -1,0 +1,19 @@
+<!-- fragment_weather.xml -->
+<!-- Layout for WeatherFragment that displays weather information -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tvWeather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fetching weather..."
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center"/>
+</LinearLayout>
