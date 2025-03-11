@@ -1,25 +1,51 @@
-name: Android CI
+name: name: Android CI
 
-   on: [push]
+on: [push]
 
-   jobs:
-     build:
-       runs-on: ubuntu-latest
+jobs:
+  build:
+    runs-on: ubuntu-latest
 
-       steps:
-         - uses: actions/checkout@v4
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
 
-         - name: Set up JDK 17
-           uses: actions/setup-java@v3
-           with:
-             java-version: '17'
-             distribution: 'temurin'
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin'
 
-         - name: Build APK
-           run: ./gradlew assembleDebug
+    - name: Build APK
+      run: ./gradlew assembleDebug
 
-         - name: Upload APK
-           uses: actions/upload-artifact@v3
-           with:
-             name: app-debug.apk
-             path: app/build/outputs/apk/debug/app-debug.apk
+    - name: Upload APK
+      uses: actions/upload-artifact@v3
+      with:
+        name: app-debug.apk
+        path: app/build/outputs/apk/debug/a pp-debug.apkAndroid CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+
+    - name: Build APK
+      run: ./gradlew assembleDebug
+
+    - name: Upload APK
+      uses: actions/upload-artifact@v3
+      with:
+        name: app-debug.apk
+        path: app/build/outputs/apk/debug/app-debug.apk
